@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<view:LoginPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Common.Core.Controls;assembly=Common.Core"
+	xmlns:view="clr-namespace:Common.Core.View;assembly=Common.Core"
+	xmlns:resources="clr-namespace:Common.Core.Properties;assembly=Common.Core"
+	x:Class="Common.Core.View.LoginPage">
+	<StackLayout
+		Spacing="20"
+		Padding="20"
+		VerticalOptions="Center">
+		<Entry
+			Text="{Binding UserLogin}"
+			Placeholder="{x:Static resources:Resources.UserLogin}"
+			Keyboard="Email"
+			IsEnabled="{ Binding IsNotBusy }"/>
+		<Entry
+			Text="{Binding Password}"
+			Placeholder="{x:Static resources:Resources.UserPassword}"
+			IsPassword="true"
+			IsEnabled="{ Binding IsNotBusy }"/>
+		<controls:AnimatedButton
+			Text="{x:Static resources:Resources.Login}"
+			TextColor="White"
+			BackgroundColor="#77D065"
+			Command="{Binding Authenticate}"
+			IsEnabled="{Binding IsNotBusy}"/>
+		<StackLayout
+			HorizontalOptions="Center"
+			Orientation="Horizontal"
+			Spacing="10"
+			Padding="10"
+			IsVisible="{Binding IsBusy}">
+			<ActivityIndicator
+				HorizontalOptions="Center"
+				IsRunning="{Binding IsBusy}"
+				IsVisible="{Binding IsBusy}"/>
+			<Label HorizontalOptions="Center"
+				VerticalOptions="Center"
+				Text="{Binding AuthenticationStatus}"/>
+		</StackLayout>
+	</StackLayout>
+</view:LoginPageXaml>

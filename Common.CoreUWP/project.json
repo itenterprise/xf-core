@@ -1,0 +1,32 @@
+﻿{
+  "dependencies": {
+    "Acr.UserDialogs": "5.0.1",
+    "FFImageLoading.Windows": "2.1.0-alpha2",
+    "Microsoft.Bcl": "1.1.10",
+    "Microsoft.Bcl.Build": "1.0.21",
+    "Microsoft.Net.Http": "2.2.29",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
+    "Newtonsoft.Json": "8.0.3",
+    "Plugin.Permissions": "1.1.7",
+    "Plugin.Share": "4.0.0",
+    "Xam.Plugin.Connectivity": "2.1.2",
+    "Xam.Plugin.DeviceInfo": "2.0.2",
+    "Xam.Plugin.Media": "2.3.0",
+    "Xam.Plugin.Version": "1.0.0",
+    "Xam.Plugins.Settings": "2.1.0",
+    "Xamarin.FFImageLoading.Forms": "2.1.0",
+    "Xamarin.FFImageLoading.Transformations": "2.1.0",
+    "Xamarin.Forms": "2.2.0.31"
+  },
+  "frameworks": {
+    "uap10.0": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}

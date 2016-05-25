@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<view:UrlSettingsPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:view="clr-namespace:Common.Core.View;assembly=Common.Core"
+	x:Class="Common.Core.View.UrlSettingsPage">
+	<StackLayout
+		Spacing="20"
+		Padding="20"
+		VerticalOptions="Center">
+		<Entry
+			Placeholder="WebServiceURL"
+			Text="{Binding Url }"
+			IsEnabled="{ Binding IsNotBusy }"/>
+	</StackLayout>
+</view:UrlSettingsPageXaml>
