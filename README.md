@@ -1,9 +1,9 @@
 <h1>xf-core  IT-Enterprise</h1>
 <h2>Установка ядра XamarinForms.IT-Enteprise</h2>
-Standard: установить nuget-пакет IT-Enterprise.Xamarin.CoreStandard.
-Android: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreDroid.
-iOS: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreiOS.
-UWP: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreUWP.
+Standard: установить nuget-пакет IT-Enterprise.Xamarin.CoreStandard.<br>
+Android: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreDroid.<br>
+iOS: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreiOS.<br>
+UWP: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreUWP.<br>
 
 Для iOS и Android проектов добавить ресурсы из папки Resources.
 
