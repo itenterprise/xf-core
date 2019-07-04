@@ -1,38 +1,13 @@
-#xf-core  IT-Enterprise
-##Настройка приложения для корректного использования ядра XamarinForms.IT-Enteprise:
-После создания приложения Xamarin.Forms Portable в Visual Studio необходимо добавить зависимости на библиотеки ядра и NuGet-пакеты которые используются в ядре. 
-Библиотеки ядра XamarinForms.IT-Enterprise:
--	Common.Core – библиотека общего кода для приложений Xamarin Forms;
--	Common.EUSign – библиотека для работы с ЕЦП;
--	Plugin.FilePicker – плагин для визуального выбора файлов в мобильном приложении.
+<h1>xf-core  IT-Enterprise</h1>
+<h2>Установка ядра XamarinForms.IT-Enteprise</h2>
+Standard: установить nuget-пакет IT-Enterprise.Xamarin.CoreStandard.
+Android: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreDroid.
+iOS: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreiOS.
+UWP: установить nuget-пакеты IT-Enterprise.Xamarin.CoreStandard и IT-Enterprise.Xamarin.CoreUWP.
 
-Для добавления зависимостей на библиотеки необходимо скопировать библиотеки ядра из репозитория GitHub (папка «dll-s») и добавить зависимости на библиотеки ядра для каждого из проектов в соответствии мобильной платформой.
-Для добавления NuGet-пакетов необходимо: 
--	В дереве решения нажать ПКМ на названии решения;
--	Выбрать пункт меню Manage NuGet Packages for Solution;
--	Установить все NuGet пакеты, которые приведены ниже, для всех проектов приложения.
-NuGet пакеты которые необходимо установить:
--	Acr.UserDialogs – всплывающие окна и уведомления;
--	FrazzApps.Xamarin.Forms.AnalyticsConnector – работа с Google Analytics;
--	Microsoft.Bcl и Microsoft.Bcl.Build – поддержка типов, добавленных в более поздних версиях .NET;
--	Microsoft.Net.Http – поддержка работы по HTTP;
--	Newtonsoft.Json – работа с JSON;
--	PCLStorage – доступ к файловой системе мобильных устройств;
--	Plugin.Permissions – проверка и запросы на использование ресурсов мобильных устройств;
--	Plugin.Share – работа с функцией «Поделиться» и открытием браузера;
--	Xam.Plugin.Badge – отображение бейджей на иконке приложения;
--	Xam.Plugin.Connectivity – проверка наличия и информация о сетевом подключении;
--	Xam.Plugin.DeviceInfo – информация о мобильном устройстве;
--	Xam.Plugin.Media – создание фото/видео или выбор из галереи;
--	Xam.Plugin.Version – определение версии приложения;
--	Xam.Plugins.Messaging – звонки, смс, отправка e-mail;
--	Xam.Plugins.Notifier – локальные уведомления;
--	Xam.Plugins.Settings – кроссплатформенные настройки;
--	Xamarin.FFImageLoading, Xamarin.FFImageLoading.Forms и
-Xamarin.FFImageLoading.Transformations – работа с картинками (округление углов, поворот и др.);
--	ZXing.Net.Mobile и ZXing.Net.Mobile.Forms – сканирование штрих- и QR-кодов.
+Для iOS и Android проектов добавить ресурсы из папки Resources.
 
-Далее необходимо в проекте с общим кодом наследовать класс приложения от  ApplicationBase из библиотеки Common.Core. В классе приложения необходимо реализовать метод GotoMainPage и свойство AppId. Метод GotoMainPage переход к главной (стартовой) странице приложения. Например, если главной страницей приложения является объект класса ItMainPage, то реализация метода будет выглядеть следующим образом: 
+Далее необходимо в проекте с общим кодом наследовать класс приложения от  ApplicationBase из библиотеки Common.CoreStandard. В классе приложения необходимо реализовать метод GotoMainPage и свойство AppId. Метод GotoMainPage переход к главной (стартовой) странице приложения. Например, если главной страницей приложения является объект класса ItMainPage, то реализация метода будет выглядеть следующим образом: 
 
 ```csharp
   public override void GotoMainPage()
@@ -69,7 +44,7 @@ Xamarin.FFImageLoading.Transformations – работа с картинками 
 -	void StartRegistrationFlow(). Метод для вызова страницы-приветствия после инициализации приложения или после выполнения выхода из учетной записи пользователя;
 -	void GotoAuthenticationPage(). Метод, который вызывается для отображения страницы аутентификации пользователя.
 
-##Настройка использования ядра Android XamarinForms.IT-Enterprise
+<h2>Настройка использования ядра Android XamarinForms.IT-Enterprise</h2>
 В проекте Android необходимо создать класс, описывающий Android-приложение. Этот класс должен наследовать класс MainApplicationBase из библиотеки Common.CoreDroid и для него должен быть задан атрибут [Application]. В этом классе есть возможность переопределить свойство NotificationSenderId и метод NotificationParameters GetNotificationParameters (NotificationPayload notificationPayload). Свойство NotificationSenderId указывает идентификатор отправителя push-уведомлений. В методе GetNotificationParameters задается процедура разбора данных из push-уведомления.
 Также в проекте Android необходимо чтобы класс главной активности наследовал класс MainActivityBase из библиотеки Common.CoreDroid. В классе главной активности необходимо реализовать методы CreateApplication и OnCreate. 
 Метод CreateApplication возвращает объект класса приложения из проекта общего кода. Например, если приложение описывается классом App, то реализация метода будет выглядеть следующим образом:
@@ -91,7 +66,7 @@ Xamarin.FFImageLoading.Transformations – работа с картинками 
   }
 ```
 
-##Настройка использования ядра iOS XamarinForms.IT-Enterprise
+<h2>Настройка использования ядра iOS XamarinForms.IT-Enterprise</h2>
 В проекте iOS необходимо чтобы класс делегата приложения наследовал класс App из библиотеки Common.CoreiOS. В классе делегата приложения необходимо реализовать методы CreateApplication и FinishedLaunching, а также свойства, которые описывают цвета приложения:
 -	ApplicationBase CreateApplication(). Метод, который возвращает объект класса приложения из проекта общего кода. Например, если приложение описывается классом App, то реализация метода будет выглядеть следующим образом:
 
